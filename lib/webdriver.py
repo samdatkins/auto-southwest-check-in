@@ -116,7 +116,7 @@ class WebDriver:
 
         driver.quit()
 
-        return flights
+        return [flight for flight in flights if flight["tripType"] == "FLIGHT"]
 
     def _get_driver(self) -> Chrome:
         chrome_version = self.checkin_scheduler.flight_retriever.config.chrome_version
